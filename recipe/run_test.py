@@ -12,7 +12,7 @@ if __name__ == '__main__':
     im2[5,2] = 10
     im2[2,4] = 10
 
-    sm = sdc.SPmerge01linear(scanAngles, im1, im2)
-    sm = sdc.SPmerge02(sm, 8, 8)
+    sm = sdc.SPmerge01linear(scanAngles, im1, im2, parallel=True)
+    sm = sdc.SPmerge02(sm, 8, 8, parallel=False)
     imageFinal, signalArray, densityArray = sdc.SPmerge03(sm)
 

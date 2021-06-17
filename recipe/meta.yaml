@@ -1,5 +1,5 @@
 {% set name = "scanning_drift_corr" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 07aa7e271ab423644fc577c7655e6030ce7833c6c10558b5774149f7d91e3668
+  sha256: 3506995a12a692235861f4c422a3fc57af15a629c4ebddf75ad6cc3bc1d27f80
 
 build:
   number: 0
@@ -16,10 +16,10 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
     - pip
   run:
-    - python >=3.7
+    - python >=3.8
     - numpy
     - matplotlib-base
     - scipy
