@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 3506995a12a692235861f4c422a3fc57af15a629c4ebddf75ad6cc3bc1d27f80
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - numpy
     - matplotlib-base
     - scipy
@@ -31,6 +31,7 @@ test:
     - scanning_drift_corr.api
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
